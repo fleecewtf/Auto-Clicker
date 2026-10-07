@@ -60,13 +60,6 @@ different combination. F8 is the fixed emergency stop while the keyboard
 monitor is working. If that monitor fails, clicking stops and new jobs are
 blocked. Restart the app to restore keyboard shortcuts.
 
-OFFLINE REGRESSION CHECKS
-
-Run .runtime\python\python.exe -I scripts\Test-AppSafety.py from this folder.
-The suite uses fake mouse input and offscreen Qt; it never clicks the desktop.
-Use --report PATH to save measurements as JSON. Timing budgets detect
-regressions and do not guarantee performance on another computer.
-
 LICENSE
 
 Copyright 2026 Fleece. This project is source-available, not open source. The bundled LICENSE permits downloading, installing, and running an unmodified official release for lawful personal, non-commercial use. Modification, redistribution, sale, rebranding, and derivative versions remain prohibited. Third-party materials retain their own licenses.
