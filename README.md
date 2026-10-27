@@ -66,6 +66,20 @@ One-click mode supports up to 500 clicks per second. Double-click mode supports 
 
 These are maximum allowed rates, not a guarantee of delivery speed. Test a low rate first, especially at a saved position. Random timing never exceeds these caps. Count mode allows up to 1,000,000,000 actions; duration mode allows up to 7 days, and the start delay allows up to 1 hour. The activity view retains the latest 500 lines.
 
+## source code
+
+Both download options use the same [Python app source](Auto%20Clicker.pyw). [ReadyLauncher.cs](ReadyLauncher.cs) is the complete C# source of the ready-to-run EXE launcher; it starts that app with the bundled private Python runtime. The EXE does not replace the Python application with native machine code.
+
+The release's [Auto-Clicker-v1.0.12-Source.zip](https://github.com/fleecewtf/Auto-Clicker/releases/download/v1.0.12/Auto-Clicker-v1.0.12-Source.zip) includes both sources, setup/dependency definitions, licenses, and assets, without installed runtimes, user data, or developer tests. The same source is mirrored on GitLab. Fleece's source-available Tool License applies; this is not an open-source license.
+
+To compile the x64 launcher with Windows .NET Framework:
+
+```bat
+"%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /platform:x64 /optimize+ /out:"Auto Clicker.exe" ReadyLauncher.cs
+```
+
+This builds the launcher only, not Python or its dependencies. Keep the matching app files and private runtime together as described above; `Installer.bat` records the pinned component versions. Adding a Windows icon when compiling is optional. No test or packaging-helper folder is required in the public source tree.
+
 ## built with
 
 - [PySide6](https://doc.qt.io/qtforpython-6/)
